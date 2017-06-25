@@ -1,33 +1,42 @@
-   
+
+<?php  $sql = "SELECT * FROM category WHERE HOME = 1 LIMIT 4" ;$cateHomefor = $db->fetchsql($sql)?>
         <!-- Footer -->
         <footer id="footer">
+            
             <div class="container">
                 <div class="column-one-fourth">
-                    <h5 class="line"><span>Tweets.</span></h5>
+                    <h5 class="line"><span>Tag.</span></h5>
                     <div class="twitterfeed">
-                        <div id="tweets"></div>
+                        <a href="" class="btn btn-xs btn-info">  bongda</a>
+                        <a href="" class="btn btn-xs btn-info">  Việt Nam </a>
+                        <a href="" class="btn btn-xs btn-info">   Anh </a>
+                        <a href="" class="btn btn-xs btn-info">  Đức </a>
+                        <a href="" class="btn btn-xs btn-info">  Cr7 </a>
+                        <a href="" class="btn btn-xs btn-info">  Messi </a>
+                        <a href="" class="btn btn-xs btn-info">  Bồ Đào Nha </a>
+                        <a href="" class="btn btn-xs btn-info">  Hà Lan </a>
+                        <a href="" class="btn btn-xs btn-info">  MU </a>
                     </div>
                 </div>
                 <div class="column-one-fourth">
-                    <h5 class="line"><span>Navigation.</span></h5>
+                    <h5 class="line"><span>Danh mục nôi bật.</span></h5>
                     <ul class="footnav">
-                        <li><a href="#"><i class="icon-right-open"></i> World.</a></li>
-                        <li><a href="#"><i class="icon-right-open"></i> Business.</a></li>
-                        <li><a href="#"><i class="icon-right-open"></i> Politics.</a></li>
-                        <li><a href="#"><i class="icon-right-open"></i> Sports.</a></li>
-                        <li><a href="#"><i class="icon-right-open"></i> Health.</a></li>
-                        <li><a href="#"><i class="icon-right-open"></i> Sciences.</a></li>
-                        <li><a href="#"><i class="icon-right-open"></i> Spotlight.</a></li>
+                        <?php foreach($cateHomefor as $item) :?>
+                            <li><a href="danh-muc.php?id=<?php echo  $item['id']?>"><i class="icon-right-open"></i> <?php echo $item['name'] ?></a></li>
+                        <?php endforeach ;?>
+
                     </ul>
                 </div>
                 <div class="column-one-fourth">
-                    <h5 class="line"><span>Flickr Stream.</span></h5>
+                    <h5 class="line"><span> Một số câu hỏi .</span></h5>
                     <div class="flickrfeed">
-                        <ul id="basicuse" class="thumbs"><li class="hide"></li></ul>
+                        <ul id="basicuse" class="thumbs">
+                            
+                        </ul>
                     </div>
                 </div>
                 <div class="column-one-fourth">
-                    <h5 class="line"><span>About.</span></h5>
+                    <h5 class="line"><span> Gới thiệu .</span></h5>
                     <p>Blandit rutrum, erat et egestas ultricies, dolor tortor egestas enim, quiste rhon cus sem purus eu sapien. Lorem ipsum dolor sit amet adipcising elit. Elit norem simuls tortor lorem adipcising purus mosteu dsapien egestas.</p>
                 </div>
                 <p class="copyright">Copyright 2013. All Rights Reserved</p>
@@ -38,6 +47,7 @@
     </div>
     </div>
 </div>
+
 <!-- / Body Wrapper -->
 
 

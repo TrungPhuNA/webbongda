@@ -84,7 +84,12 @@
 
             return mysqli_affected_rows($this->link);
         }
+        public function updateview($sql)
+        {
+            $result = mysqli_query($this->link,$sql)  or die ("Lỗi update view " .mysqli_error($this->link));
+            return mysqli_affected_rows($this->link);
 
+        }
         public function countTable($table)
         {
             $sql = "SELECT id FROM  {$table}";

@@ -2,8 +2,29 @@
 
     require_once __DIR__ . "/autoload/autoload.php"; 
     $id = getInput('id');
+   
+    // $check_view = $_SESSION["chitiet_".$id];
+    //Sử dụng SESSION
+    
+    // if(! isset($_SESSION["chitiet_".$id]) )
+    // {
+    //     $_SESSION["chitiet_".$id] = 1;
+    //     // _debug($_SESSION['chitiet_'.$id]);
+    //     $sql = " UPDATE posts SET view = view + 1 WHERE id = $id ";
+    //     $up = $db->updateview($sql);
+    // }
 
 
+    // Sử dụng cookie
+    if(! isset($_COOKIE["chitiet_".$id]) )
+    {
+        $_COOKIE["chitiet_".$id] = 1;
+        setcookie('chitiet_'.$id, 'setcookie ', time() + 60);
+        $sql = " UPDATE posts SET view = view + 1 WHERE id = $id ";
+        $up = $db->updateview($sql);
+        setcookie('chitiet_'.$id,'',time() - 60);
+    }
+ 
     $posts = $db->fetchID('posts',$id);
     $idcate = intval($posts['category_id']);
     $sql = "SELECT * FROM posts WHERE category_id = $idcate LIMIT 4";

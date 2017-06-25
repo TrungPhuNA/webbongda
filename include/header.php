@@ -35,7 +35,14 @@
 </head>
 
 <body>
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <!-- Body Wrapper -->
 <div class="body-wrapper">
     <div class="controller">
@@ -46,7 +53,7 @@
             <div class="container">
                 <div class="column">
                     <div class="logo">
-                        <a href="index-2.html"><img src="img/logo.png" alt="MyPassion" /></a>
+                        <a href="<?php echo base_url()?>"><img src="img/logo.png" alt="MyPassion" /></a>
                     </div>
                     
                     <div class="search">
