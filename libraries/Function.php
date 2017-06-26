@@ -298,6 +298,22 @@
     }
 
 
+    function insertview($string,$id,$time,$table)
+    {
+         if(! isset($_COOKIE[$string.$id]) )
+        {
+            $_COOKIE[$string.$id] = 1;
+            setcookie($string.$id,'setcookie', time() + $time);
+            
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
 
 
 

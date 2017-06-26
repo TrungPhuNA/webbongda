@@ -19,12 +19,11 @@
     // require_once __DIR__ . "/../../libraries/Middleware.php";
 
     
-     if( ! isset($_SESSION['admin_na_level']))
-     {
+    if( ! isset($_SESSION['admin_na_level']))
+    {
          redirectStyle('adminlogin/');
-     }
-     _debug($_SESSION['admin_na_level']);
-     $adminid = intval($_SESSION['admin_na_id']);
+    }
+    $adminid = intval($_SESSION['admin_na_id']);
 
     /**
      *  khởi tạo DB

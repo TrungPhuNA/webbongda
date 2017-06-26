@@ -49,7 +49,7 @@
     <div class="sidebar">
         <h5 class="line"><span>Vimeo Video.</span></h5>
         <?php foreach($video as $item ) :?>
-            <?php echo $item['url'] ?>
+            
         <?php endforeach ;?>
     
     </div>

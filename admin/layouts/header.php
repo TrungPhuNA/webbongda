@@ -95,8 +95,8 @@
                                     <li>
                                         <a><i class="glyphicon glyphicon-wrench"></i> Settings<span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
-                                            <li><a href="">Cấu hình chung</a></li>
-                                            <li><a href="">Quản lý admin</a></li>
+                                         
+                                            <li><a href="<?php echo modules("admin") ?>">Quản lý admin</a></li>
                                            
                                         </ul>
                                     </li>

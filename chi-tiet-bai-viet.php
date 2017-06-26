@@ -3,28 +3,16 @@
     require_once __DIR__ . "/autoload/autoload.php"; 
     $id = getInput('id');
    
-    // $check_view = $_SESSION["chitiet_".$id];
-    //Sử dụng SESSION
-    
-    // if(! isset($_SESSION["chitiet_".$id]) )
-    // {
-    //     $_SESSION["chitiet_".$id] = 1;
-    //     // _debug($_SESSION['chitiet_'.$id]);
-    //     $sql = " UPDATE posts SET view = view + 1 WHERE id = $id ";
-    //     $up = $db->updateview($sql);
-    // }
 
-
-    // Sử dụng cookie
-    if(! isset($_COOKIE["chitiet_".$id]) )
+    // Gán coockie ktra view  
+    $check_view  = insertview("chitiet_",$id,10,"posts");
+    if($check_view == true)
     {
-        $_COOKIE["chitiet_".$id] = 1;
-        setcookie('chitiet_'.$id, 'setcookie ', time() + 60);
         $sql = " UPDATE posts SET view = view + 1 WHERE id = $id ";
         $up = $db->updateview($sql);
-        setcookie('chitiet_'.$id,'',time() - 60);
     }
- 
+
+
     $posts = $db->fetchID('posts',$id);
     $idcate = intval($posts['category_id']);
     $sql = "SELECT * FROM posts WHERE category_id = $idcate LIMIT 4";
@@ -67,15 +55,14 @@
                             <?php echo $posts['content'] ?>
                         </p>
                         <ul class="sharebox">
-                            <li><a href="#"><span class="twitter">Tweet</span></a></li>
-                            <li><a href="#"><span class="pinterest">Pin it</span></a></li>
-                            <li><a href="#"><span class="facebook">Like</span></a></li>
+                            <h4>Link share </h4>
+                            <!-- <div class="fb-like" data-href="http://localhost/webbongda/chi-tiet-bai-viet.php?id=2" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div> -->
                         </ul>
                         
                         
                         <div class="authorbox">
                             <img src="img/trash/author.png" alt="MyPassion">
-                            <h6>MyPassion.</h6>
+                            <h6>Tác giả .</h6>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales dapibus dui, sed iaculis metus facilisis sed. Etiam scelerisque molestie purus vel mollis. Mauris dapibu quam id turpis dignissim rutrum.</p>
                         </div>
                         
@@ -99,150 +86,10 @@
                         
                         <div class="comments">
                             <h5 class="line"><span>Comments.</span></h5>
-                            <ul>
-                                <li>
-                                    <div>
-                                        <div class="comment-avatar"><img src="img/avatar.png" alt="MyPassion"></div>
-                                        <div class="commment-text-wrap">
-                                            <div class="comment-data">
-                                                <p><a href="#" class="url">MyPassion</a> <br> <span>January 12, 2013 - <a href="#" class="comment-reply-link">reply</a></span></p>
-                                            </div>
-                                            <div class="comment-text">Curabitur nunc mauris, <a href="#">link test</a> id dictum quis, aliquet vel diam. Aliquam gravida, augue et dictum hendrerit, nisl erat congue elit, et molestie magna sapien cursus tortor.</div>
-                                        </div>
-                                        
-                                    </div>
-                                    <ul class="children">
-                                        <li>
-                                            <div>
-                                                <div class="comment-avatar"><img src="img/avatar.png" alt="MyPassion"></div>
-                                                <div class="commment-text-wrap">
-                                                    <div class="comment-data">
-                                                        <p><a href="#" class="url">MyPassion</a> <br> <span>January 12, 2013 - <a href="#" class="comment-reply-link">reply</a></span></p>
-                                                    </div>
-                                                    <div class="comment-text">Curabitur nunc mauris, imperdiet id dictum quis, aliquet vel diam. Aliquam gravida, augue et dictum hendrerit, nisl erat congue elit, et molestie magna sapien cursus tortor.</div>
-                                                </div>
-                                            </div>
-                                            
-                                            <ul class="children">
-                                                <li>
-                                                    <div>
-                                                        <div class="comment-avatar"><img src="img/avatar.png" alt="MyPassion"></div>
-                                                        <div class="commment-text-wrap">
-                                                            <div class="comment-data">
-                                                                <p><a href="#" class="url">MyPassion</a> <br> <span>January 12, 2013 - <a href="#" class="comment-reply-link">reply</a></span></p>
-                                                            </div>
-                                                            <div class="comment-text">Curabitur nunc mauris, imperdiet id dictum quis, aliquet vel diam. Aliquam gravida, augue et dictum hendrerit, nisl erat congue elit, et molestie magna sapien cursus tortor.</div>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <ul class="children">
-                                                        <li>
-                                                            <div>
-                                                                <div class="comment-avatar"><img src="img/avatar.png" alt="MyPassion"></div>
-                                                                <div class="commment-text-wrap">
-                                                                    <div class="comment-data">
-                                                                        <p><a href="#" class="url">MyPassion</a> <br> <span>January 12, 2013 - <a href="#" class="comment-reply-link">reply</a></span></p>
-                                                                    </div>
-                                                                    <div class="comment-text">Curabitur nunc mauris, imperdiet id dictum quis, aliquet vel diam. Aliquam gravida, augue et dictum hendrerit, nisl erat congue elit, et molestie magna sapien cursus tortor.</div>
-                                                                </div>
-                                                            </div>
-                                                            
-                                                            <ul class="children">
-                                                                <li>
-                                                                    <div>
-                                                                        <div class="comment-avatar"><img src="img/avatar.png" alt="MyPassion"></div>
-                                                                        <div class="commment-text-wrap">
-                                                                            <div class="comment-data">
-                                                                                <p>MyPassion <br> <span>January 12, 2013 - <a href="#" class="comment-reply-link">reply</a></span></p>
-                                                                            </div>
-                                                                            <div class="comment-text">Curabitur nunc mauris, imperdiet id dictum quis, aliquet vel diam. Aliquam gravida, augue et dictum hendrerit, nisl erat congue elit, et molestie magna sapien cursus tortor.</div>
-                                                                        </div>
-                                                                    </div>
-                                                                    
-                                                                    <ul class="children">
-                                                                        <li>
-                                                                            <div>
-                                                                                <div class="comment-avatar"><img src="img/avatar.png" alt="MyPassion"></div>
-                                                                                <div class="commment-text-wrap">
-                                                                                    <div class="comment-data">
-                                                                                        <p><a href="#" class="url">MyPassion</a> <br> <span>January 12, 2013 - <a href="#" class="comment-reply-link">reply</a></span></p>
-                                                                                    </div>
-                                                                                    <div class="comment-text">Curabitur nunc mauris, imperdiet id dictum quis, aliquet vel diam. Aliquam gravida, augue et dictum hendrerit, nisl erat congue elit, et molestie magna sapien cursus tortor.</div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                    </ul>
-                                                                    
-                                                                </li>
-                                                            </ul>
-                                                            
-                                                        </li>
-                                                    </ul>
-                                                    
-                                                </li>
-                                            </ul>
-                                            
-                                            <ul class="children">
-                                                <li>
-                                                    <div>
-                                                        <div class="comment-avatar"><img src="img/avatar.png" alt="MyPassion"></div>
-                                                        <div class="commment-text-wrap">
-                                                            <div class="comment-data">
-                                                                <p><a href="#" class="url">MyPassion </a><br> <span>January 12, 2013 - <a href="#" class="comment-reply-link">reply</a></span></p>
-                                                            </div>
-                                                            <div class="comment-text">Curabitur nunc mauris, imperdiet id dictum quis, aliquet vel diam. Aliquam gravida, augue et dictum hendrerit, nisl erat congue elit, et molestie magna sapien cursus tortor.</div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            
-                                        </li>
-                                    </ul>
-                                    <ul class="children">
-                                        <li>
-                                            <div>
-                                                <div class="comment-avatar"><img src="img/avatar.png" alt="MyPassion"></div>
-                                                <div class="commment-text-wrap">
-                                                    <div class="comment-data">
-                                                        <p><a href="#" class="url">MyPassion</a> <br> <span>January 12, 2013 - <a href="#" class="comment-reply-link">reply</a></span></p>
-                                                    </div>
-                                                    <div class="comment-text">Curabitur nunc mauris, imperdiet id dictum quis, aliquet vel diam. Aliquam gravida, augue et dictum hendrerit, nisl erat congue elit, et molestie magna sapien cursus tortor.</div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
+                          <!--  <div class="fb-comments" data-href="http://localhost/webbongda/chi-tiet-bai-viet.php?id=1" data-numposts="5"></div> -->
                         </div>
                         
-                        <div class="comment-form">
-                            <h5 class="line"><span>Leave a reply.</span></h5>
-                            <form action="#" method="post">
-                                <div class="form">
-                                    <label>Name*</label>
-                                    <div class="input">
-                                        <input type="text" class="name">
-                                    </div>
-                                </div>
-                                <div class="form">
-                                    <label>Email*</label>
-                                    <div class="input">
-                                        <input type="text" class="name">
-                                    </div>
-                                </div>
-                                <div class="form">
-                                    <label>Website</label>
-                                    <div class="input">
-                                        <input type="text" class="name">
-                                    </div>
-                                </div>
-                                <div class="form">
-                                    <label>Comment*</label>
-                                    <textarea rows="10" cols="20"></textarea>
-                                </div>
-                                <input type="submit" class="post-comment" value="Post Comment">
-                            </form>
-                        </div>
+                       
                         
                     </div>
                     <!-- /Single -->

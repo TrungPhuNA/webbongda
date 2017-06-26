@@ -53,15 +53,15 @@
 
 <!-- SCRIPTS -->
 <script type="text/javascript" src="<?php echo base_url() ?>public/frontend/js/jquery.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>public/frontend/js/easing.min.js"></script>
+<!-- <script type="text/javascript" src="public/frontend/js/easing.min.js"></script> -->
 <script type="text/javascript" src="<?php echo base_url() ?>public/frontend/js/1.8.2.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>public/frontend/js/ui.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>public/frontend/js/carouFredSel.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>public/frontend/js/superfish.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>public/frontend/js/customM.js"></script>
+<!-- <script type="text/javascript" src="public/frontend/js/superfish.js"></script> -->
+<script type="text/javascript" src="public/frontend/js/customM.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>public/frontend/js/flexslider-min.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>public/frontend/js/jtwt.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>public/frontend/js/jflickrfeed.min.js"></script>
+<!-- <script type="text/javascript" src="okpublic/frontend/js/jtwt.min.js"></script>
+<script type="text/javascript" src="okpublic/frontend/js/jflickrfeed.min.js"></script> -->
 <script type="text/javascript" src="<?php echo base_url() ?>public/frontend/js/mobilemenu.js"></script>
 
 <!--[if lt IE 9]> <script type="text/javascript" src="js/html5.js"></script> <![endif]-->

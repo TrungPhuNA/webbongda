@@ -18,7 +18,7 @@
 
 <!-- STYLES -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>public/frontend/css/css.css" media="screen"/>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>public/frontend/css/fontello.css" />
+<!-- <link rel="stylesheet" type="text/css" href="public/frontend/css/fontello.css" /> -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>public/frontend/css/flexslider.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>public/frontend/css/font-awesome.min.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>public/frontend/css/ui.css" />
@@ -40,9 +40,10 @@
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9";
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=227864031057153";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
 <!-- Body Wrapper -->
 <div class="body-wrapper">
     <div class="controller">
@@ -58,7 +59,7 @@
                     
                     <div class="search">
                         <form action="#" method="post">
-                            <input type="text" value="Search." onblur="if(this.value=='') this.value='Search.';" onfocus="if(this.value=='Search.') this.value='';" class="ft"/>
+                            <input type="text" placeholder="Từ khóa tìm kiếm "  class="ft"/>
                             <input type="submit" value="" class="fs">
                         </form>
                     </div>
@@ -67,37 +68,6 @@
                     <nav id="nav">
                         <?php echo showcatemenu($categorySort); ?>
 
-                        <!-- <ul class="sf-menu">
-                            <li class=""><a href="index-2.html">Home.</a></li>
-                            <li>
-                                <a href="#">Pages.</a>
-                                <ul>
-                                    <li><i class="icon-right-open"></i><a href="leftsidebar.html">Left Sidebar.</a></li>
-                                    <li><i class="icon-right-open"></i><a href="reviews.html">Reviews.</a></li>
-                                    <li><i class="icon-right-open"></i><a href="single.html">Single News.</a></li>
-                                    <li><i class="icon-right-open"></i><a href="features.html">Features.</a></li>
-                                    <li><i class="icon-right-open"></i><a href="contact.html">Contact.</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="reviews.html">World.</a></li>
-                            <li><a href="reviews.html">Business.</a></li>
-                            <li><a href="reviews.html">Politics.</a></li>
-                            <li>
-                                <a href="reviews.html">Sports.</a>
-                                <ul>
-                                    <li><i class="icon-right-open"></i><a href="#">Football.</a></li>
-                                    <li><i class="icon-right-open"></i><a href="#">Running.</a></li>
-                                    <li><i class="icon-right-open"></i><a href="#">Tennis.</a></li>
-                                    <li><i class="icon-right-open"></i><a href="#">Fitness.</a></li>
-                                    <li><i class="icon-right-open"></i><a href="#">Golf.</a></li>
-                                    <li><i class="icon-right-open"></i><a href="#">Motosport.</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="reviews.html">Health.</a></li>
-                            <li><a href="reviews.html">Science.</a></li>
-                            <li><a href="reviews.html">Music.</a></li>
-                            <li><a href="reviews.html">Tech.</a></li>
-                        </ul> -->
                         
                     </nav>
                     <!-- /Nav -->
