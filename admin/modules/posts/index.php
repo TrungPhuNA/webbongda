@@ -1,5 +1,6 @@
 
     <?php 
+    $open = "post";
     include __DIR__ ."/../../autoload/autoload.php";
 
         if(isset($_GET['page']))
@@ -13,7 +14,7 @@
         $sql = "SELECT * FROM posts 
             LEFT JOIN category on category.id = posts.categoryid
          ";
-        $posts = $db->fetchJone('posts',$sql,$p,5,true);
+        $posts = $db->fetchJone('posts',$sql,$p,10,true);
   
         if(isset($posts['page']))
         {
@@ -44,7 +45,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Tên</th>
+                        <th>Danh mục</th>
                         <th>Slug</th>
                         <th>Hình ảnh</th>
                         <th>Trạng Thái</th>

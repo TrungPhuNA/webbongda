@@ -24,6 +24,7 @@
          redirectStyle('adminlogin/');
     }
     $adminid = intval($_SESSION['admin_na_id']);
+    $adminlevel = intval($_SESSION['admin_na_level']);
 
     /**
      *  khởi tạo DB

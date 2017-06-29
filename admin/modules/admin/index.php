@@ -1,5 +1,7 @@
 
     <?php 
+     $open = "admin";
+     $show = "show";
     include __DIR__ ."/../../autoload/autoload.php";
     
 

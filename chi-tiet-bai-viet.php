@@ -14,8 +14,8 @@
 
 
     $posts = $db->fetchID('posts',$id);
-    $idcate = intval($posts['category_id']);
-    $sql = "SELECT * FROM posts WHERE category_id = $idcate LIMIT 4";
+    $idcate = intval($posts['categoryid']);
+    $sql = "SELECT * FROM posts WHERE categoryid = $idcate LIMIT 4";
     $postDe = $db->fetchsql($sql);
    
 

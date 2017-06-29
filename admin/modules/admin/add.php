@@ -1,5 +1,6 @@
 
     <?php 
+        $open = "admin";
         include __DIR__ ."/../../autoload/autoload.php";
          /**
          * lấy dữ liệu từ đệ quy
@@ -13,7 +14,9 @@
             'phone'       => postInput("phone"),
             'email'       => postInput("email"),
             'password'    => md5(postInput("password")),
-            'address'     => postInput("address")
+            'address'     => postInput("address"),
+            'about'       => postInput("about"),
+            'level'       => intval(postInput("level"))
         ];
 
         if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -24,7 +27,8 @@
                 'phone'       => 'required',
                 'email'       => 'required',
                 'password'    => 'required',
-                'address'     => 'required'
+                'address'     => 'required',
+                'about'       => 'required'
             ];
 
             $request = new Validation($_POST, $rules);
@@ -106,6 +110,23 @@
                             <label for="inputEmail3" class="col-sm-2 col-md-offset-1 control-label"> Address </label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" id="inputEmail3" name="address" placeholder="Mời bạn nhập địa chỉ  " value="<?php echo $data['address']  ?>">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 col-md-offset-1 control-label"> Level </label>
+                            <div class="col-sm-8">
+                                <select name="level" class="form-control">
+                                    <option value="1">CTV</option>
+                                    <option value="2">Admin</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 col-md-offset-1 control-label"> About </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" name="about" placeholder="Mời bạn nhập địa chỉ  " value="<?php echo $data['about']  ?>">
                             </div>
                         </div>
 

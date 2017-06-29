@@ -1,5 +1,6 @@
-
+    
     <?php 
+         $open = "post";
     	include __DIR__ ."/../../autoload/autoload.php";
 
     	$category = $db->fetchAll('category');

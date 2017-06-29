@@ -9,7 +9,7 @@
     foreach($CateHome as $item)
     {
         $cateid = intval($item);
-        $sql = " SELECT * FROM posts WHERE category_id = $cateid ORDER BY ID DESC LIMIT 2";
+        $sql = " SELECT * FROM posts WHERE categoryid = $cateid ORDER BY ID DESC LIMIT 2";
         $data[$item['name']] = $db->fetchsql($sql);
     }
     

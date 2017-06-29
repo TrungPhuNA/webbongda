@@ -38,7 +38,7 @@
     <div class="right_col" role="main">
        <div class="x_panel">
              <div class="x_title">
-            <h2>Danh sách thành viên   </h2>
+            <h2>Danh sách thành viên  <a href="add.php" class="btn btn-xs btn-success"> Thêm mới thành viên </a>  </h2>
             
             <div class="clearfix"></div>
         </div>

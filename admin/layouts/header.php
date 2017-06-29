@@ -40,7 +40,7 @@
                             <div class="menu_section">
                                 <h3>Bảng điều khiển</h3>
                                 <ul class="nav side-menu">
-                                    <li>
+                                    <li class="<?php ! isset( $open )? 'active' : '' ?>">
                                         <a href="<?php echo base_admin()?>"><i class="fa fa-home"></i> Trang chủ</a>
                                        
                                     </li>
@@ -54,7 +54,7 @@
                                         </ul>
                                     </li>
                                   
-                                    <li>
+                                    <li class="<?php echo  isset($open) && $open == 'post' ? 'active' : '' ?>">
                                         <a><i class="glyphicon glyphicon-pencil"></i> Quản lý bài viết<span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="<?php echo modules("posts") ?>">Danh sách</a></li>
@@ -92,7 +92,7 @@
                             <div class="menu_section">
                                 <h3>Cấu hình website</h3>
                                 <ul class="nav side-menu">
-                                    <li>
+                                    <li class="<?php echo  isset($open) && $open == 'admin' ? 'active' : '' ?>">
                                         <a><i class="glyphicon glyphicon-wrench"></i> Settings<span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                          

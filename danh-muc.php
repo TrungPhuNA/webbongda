@@ -15,14 +15,18 @@
     }
 
 
-    $sql = "SELECT * FROM posts WHERE category_id = $id";
-
-    $posts = $db->fetchJone('posts',$sql,$p, 5,true);
+    $sql = "SELECT * FROM posts WHERE categoryid = $id";
+    $coutnts = count($db->fetchsql($sql));
+   
+    $posts = $db->fetchJones('posts',$sql,$coutnts,$p, 10,true);
     if(isset($posts['page']))
     {
         $sotrang =  $posts['page'];
         unset($posts['page']); 
     }
+
+    $path = $_SERVER['SCRIPT_NAME'];
+
 
 ?>
 
@@ -48,8 +52,9 @@
                                         <a href="chi-tiet-bai-viet.php?id=<?php echo $item['id'] ?>"><img src="<?php echo uploads() ?>posts/<?php echo $item['thunbar'] ?>" alt="MyPassion" class="alignleft" width="140px" height="86px" /></a>
                                         <p>
                                             <span> Thời gian : <?php echo formathtime($item['created_at']) ?> </span>
-                                            <a href="chi-tiet-bai-viet.php?id=<?php echo $item['id'] ?>"><?php echo $item['name'] ?></a>
+                                            <a href="chi-tiet-bai-viet.php?id=<?php echo $item['id'] ?>"><?php echo cutstring($item['name'],50) ?></a>
                                         </p>
+                                        <p><i class="fa fa-eye"> <b> <?php echo $item['view'] ?></b></i></p>
                                         <span class="rating"><span style="width:80%;"></span></span>
                                     
                                     </li>
@@ -79,9 +84,10 @@
                                     }
                                     ?>
                                     <li class="<?php echo ($i == $p) ? 'active' : ''  ?>">
-
-                                        <a href="?page=<?php echo $i ;?>"><?php echo $i; ?></a>
+    
+                                        <a href="<?php echo $path ?>?id=<?php echo $id ?>&&page=<?php echo $i ;?>"><?php echo $i; ?></a>
                                     </li>
+
                                 <?php endfor; ?>
 
                                 <li>
