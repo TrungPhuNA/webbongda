@@ -58,6 +58,7 @@
                                         <a><i class="glyphicon glyphicon-pencil"></i> Quản lý bài viết<span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="<?php echo modules("posts") ?>">Danh sách</a></li>
+                                            <li><a href="<?php echo modules("posts/xem.php") ?>"> Xem nhiều</a></li>
                                           
                                         </ul>
                                     </li>
