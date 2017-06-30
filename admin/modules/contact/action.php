@@ -1,6 +1,6 @@
 <?php
     
-  
+    $open = "contact";
     /**
      * gọi file autoload
      */

@@ -1,5 +1,6 @@
 
     <?php 
+    $open = "category";
     include __DIR__ ."/../../autoload/autoload.php";
     $category = $db->fetchAll('category');
     recursive($category ,$parents = 0 ,$level = 1 ,$categorySort);

@@ -1,5 +1,6 @@
 
     <?php 
+         $open = "category";
     	include __DIR__ ."/../../autoload/autoload.php";
     	$error = [] ; 
 

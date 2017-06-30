@@ -1,5 +1,6 @@
 
     <?php 
+    $open = "user";
     include __DIR__ ."/../../autoload/autoload.php";
     
 

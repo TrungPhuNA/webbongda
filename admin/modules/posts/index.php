@@ -73,12 +73,15 @@
                                 <a href="edit.php?id=<?php echo $item['id'] ?>" class="btn  btn-info btn-xs"><i class="fa fa-edit"></i> Sửa</a>
                                 
                                 <a href="delete.php?id=<?php echo $item['id'] ?>" class="btn  btn-danger btn-xs confirmation"> <i class="fa fa-times"></i> Xóa</a>
-                               
+                               <a type="button" class="btn btn-info btn-xs viewpost" data-id="<?php echo $item['id'] ?>" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye"></i></a>
                             </td>
                         </tr>
                     <?php  endforeach ;?>
                 </tbody>
             </table>
+            <div class="modal fade viewmd" id="myModal" role="dialog">
+                
+            </div>
             <nav aria-label="Page navigation" class="clearfix">
 
                 <ul class="pagination" >

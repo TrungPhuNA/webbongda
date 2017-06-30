@@ -58,8 +58,8 @@
                     </div>
                     
                     <div class="search">
-                        <form action="#" method="post">
-                            <input type="text" placeholder="Từ khóa tìm kiếm "  class="ft"/>
+                        <form action="tim-kiem.php" method="get">
+                            <input type="text" placeholder="Từ khóa tìm kiếm " value="<?php echo  isset($key) ? $key : '' ?>"  class="ft" name="keywork" required="" />
                             <input type="submit" value="" class="fs">
                         </form>
                     </div>

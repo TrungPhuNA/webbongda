@@ -1,6 +1,6 @@
 <?php
     
-  
+    $open = "user";
     /**
      * gọi file autoload
      */

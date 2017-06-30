@@ -1,6 +1,6 @@
 <?php
     
-
+     $open = "video";
     include __DIR__ ."/../../autoload/autoload.php";
 
     /**

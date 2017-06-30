@@ -46,7 +46,7 @@
                                     </li>
                                    
                                     
-                                    <li>
+                                    <li class="<?php echo  isset($open) && $open == 'category' ? 'active' : '' ?>">
                                         <a><i class="glyphicon glyphicon-list"></i> Quản lý danh mục <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="<?php echo modules("category") ?>">Danh sách</a></li>
@@ -62,7 +62,7 @@
                                         </ul>
                                     </li>
 
-                                    <li>
+                                    <li class="<?php echo  isset($open) && $open == 'contact' ? 'active' : '' ?>">
                                         <a><i class="fa fa-comments-o"></i> Quản lý Contact<span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="<?php echo modules("contact") ?>">Danh sách</a></li>
@@ -70,7 +70,7 @@
                                         </ul>
                                     </li>
 
-                                    <li>
+                                    <li class="<?php echo  isset($open) && $open == 'video' ? 'active' : '' ?>">
                                         <a><i class="fa fa-file-video-o"></i> Quản lý video<span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="<?php echo modules("video") ?>">Danh sách</a></li>
@@ -78,13 +78,19 @@
                                         </ul>
                                     </li>
 
-                                     <li>
+                                    <li class="<?php echo  isset($open) && $open == 'user' ? 'active' : '' ?>">
                                         <a><i class="fa fa-user"></i> Quản lý thành viên<span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="<?php echo modules("users") ?>">Danh sách</a></li>
                                           
                                         </ul>
                                     </li>
+
+                                    <li class="<?php echo  isset($open) && $open == 'profile' ? 'active' : '' ?>">
+                                        <a href="<?php echo modules("profile") ?>"><i class="fa fa-user"></i>  Trang cá nhân </a>
+                                        
+                                    </li>
+                                    
                                     
                                     
                                 </ul>
@@ -134,50 +140,15 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="">
                                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="images/img.jpg" alt="">John Doe
+                                   <?php echo $_SESSION['admin_na_name'] ?>
                                     <span class=" fa fa-angle-down"></span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                        <li><a href="javascript:;"> Profile</a></li>
-                                        <li>
-                                            <a href="javascript:;">
-                                            <span class="badge bg-red pull-right">50%</span>
-                                            <span>Settings</span>
-                                            </a>
-                                        </li>
-                                        <li><a href="javascript:;">Help</a></li>
-                                        <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                      
+                                        <li><a href="<?php echo base_url() ?>adminlogout/logout.php"><i class="fa fa-sign-out pull-right"></i> Đăng xuất </a></li>
                                     </ul>
                                 </li>
-                                <li role="presentation" class="dropdown">
-                                    <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="badge bg-green">6</span>
-                                    </a>
-                                    <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                                        <li>
-                                            <a>
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                            <span>
-                                            <span>John Smith</span>
-                                            <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                            Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                            </a>
-                                        </li>
-                                       
-                                        <li>
-                                            <div class="text-center">
-                                                <a>
-                                                <strong>See All Alerts</strong>
-                                                <i class="fa fa-angle-right"></i>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
+                            
                             </ul>
                         </nav>
                     </div>

@@ -1,5 +1,6 @@
 
     <?php 
+    $open = "contact";
     include __DIR__ ."/../../autoload/autoload.php";
     
 

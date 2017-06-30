@@ -22,3 +22,29 @@
         <script src="<?php echo public_admin() ?>js/custom.min.js"></script>
     </body>
 </html>
+
+
+<script type="text/javascript">
+    $url = $(location).attr('href'); 
+
+    $(function()
+    {
+        
+        $viewpost = $(".viewpost");
+        $viewpost.click(function() {
+            /* Act on the event */
+            $id = $(this).attr("data-id");
+            $.ajax({
+            url: $url +"view.php",
+            type:'GET',
+            data:{'id':$id},
+            async:true,
+            success:function($kq)
+            {
+               $viewmd = $(".viewmd").html("");
+               $viewmd.append($kq);
+            }
+        })
+        });
+    });
+</script>

@@ -54,6 +54,7 @@
                         <th> id </th>
                         <th> Tên </th>
                         <th> Email </th>
+                        <th> Level </th>
                         <th> Phone </th>
                         <th class="text-center"> Trạng thái</th>
                         <th class="text-center"> Thao Tác </th>
@@ -66,6 +67,12 @@
                        <td><?php echo $item['id'] ?></td>
                        <td><?php echo $item['name'] ?></td>
                        <td><?php echo $item['email'] ?></td>
+                       <td>
+                           <select class="form-control">
+                               <option value="<?php echo $item['level'] ?>" <?php echo $item['level'] == 2 ? "selected == 'selected'" : '' ?>>  Admin </option>
+                               <option value="<?php echo $item['level'] ?>" <?php echo $item['level'] == 1 ? "selected == 'selected'" : '' ?>>  CTV </option>
+                           </select>
+                       </td>
                        <td><?php echo $item['phone'] ?></td>
                        <td class="text-center">
                            <?php if($item['active'] == 1) :?>

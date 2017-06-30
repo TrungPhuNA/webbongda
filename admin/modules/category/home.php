@@ -1,6 +1,6 @@
 <?php
     
-  
+     $open = "category";
     /**
      * gọi file autoload
      */
