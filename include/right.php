@@ -19,9 +19,7 @@
                     <a href="dang-nhap.php" title="">Đăng nhập</a>
                 </li>
             <?php endif ;?>
-            <li>
-                <a href="" title="">Gủi ý kiến</a>
-            </li>
+        
             <li>
                 <a href="contact.php" title="">Liên hệ </a>
             </li>

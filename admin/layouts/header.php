@@ -40,7 +40,7 @@
                             <div class="menu_section">
                                 <h3>Bảng điều khiển</h3>
                                 <ul class="nav side-menu">
-                                    <li class="<?php ! isset( $open )? 'active' : '' ?>">
+                                    <li class="active">
                                         <a href="<?php echo base_admin()?>"><i class="fa fa-home"></i> Trang chủ</a>
                                        
                                     </li>

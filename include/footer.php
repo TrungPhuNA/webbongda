@@ -37,9 +37,9 @@
                 </div>
                 <div class="column-one-fourth">
                     <h5 class="line"><span> Gới thiệu .</span></h5>
-                    <p>Blandit rutrum, erat et egestas ultricies, dolor tortor egestas enim, quiste rhon cus sem purus eu sapien. Lorem ipsum dolor sit amet adipcising elit. Elit norem simuls tortor lorem adipcising purus mosteu dsapien egestas.</p>
+                    <p> Đồ án tốt nghiệp </p>
                 </div>
-                <p class="copyright">Copyright 2013. All Rights Reserved</p>
+                <p class="copyright">Copyright 2017. Đỗ Gia Tùng</p>
             </div>
         </footer>
         <!-- / Footer -->

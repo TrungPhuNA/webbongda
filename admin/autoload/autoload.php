@@ -16,7 +16,7 @@
     require_once __DIR__ . "/../../libraries/Database.php";
     require_once __DIR__ . "/../../libraries/Function.php";
     require_once __DIR__ . "/../../libraries/Validation.php";
-    // require_once __DIR__ . "/../../libraries/Middleware.php";
+    require_once __DIR__ . "/../../libraries/Middleware.php";
 
     
     if( ! isset($_SESSION['admin_na_level']))
@@ -29,11 +29,10 @@
     /**
      *  khởi tạo DB
      */
-
-
+    $open = '';
     $db = new Database();
-    // $level = $_SESSION['admin_na_level'];
-    // $middeware = new Middeware($active ,$level ,$open );
+    $level = $_SESSION['admin_na_level'];
+    $middeware = new Middeware($level ,$open );
 
     date_default_timezone_set('Asia/Ho_Chi_Minh');
     

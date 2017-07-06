@@ -3,24 +3,24 @@
     $open = "post";
     include __DIR__ ."/../../autoload/autoload.php";
 
-        if(isset($_GET['page']))
-        {
-            $p = $_GET['page'];
-        }
-        else
-        {
-            $p = 1;
-        }
-        $sql = "SELECT * FROM posts 
-            LEFT JOIN category on category.id = posts.categoryid
-         ";
-        $posts = $db->fetchJone('posts',$sql,$p,10,true);
-  
-        if(isset($posts['page']))
-        {
-            $sotrang =  $posts['page'];
-            unset($posts['page']); 
-        }
+    if(isset($_GET['page']))
+    {
+        $p = $_GET['page'];
+    }
+    else
+    {
+        $p = 1;
+    }
+    $sql = "SELECT * FROM posts 
+        LEFT JOIN category on category.id = posts.categoryid
+     ";
+    $posts = $db->fetchJone('posts',$sql,$p,10,true);
+
+    if(isset($posts['page']))
+    {
+        $sotrang =  $posts['page'];
+        unset($posts['page']); 
+    }
     ?>
     <?php 
         /**
